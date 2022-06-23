@@ -8,3 +8,6 @@
 ### addEventListener & removeEventListener
 * keep-alive 대상이어도 각각 mounted, beforeDestroy 훅에 선언하는 것이 맞음.
 * activated, deactivated 훅에 add/remove 를 선언하게 되면 keep-alive를 사용하는 의미가 없음.
+
+### Browser
+* 전 페이지 스크롤 위치 유지는 브라우저 기능이다. keep-alive와 관련 없음.
