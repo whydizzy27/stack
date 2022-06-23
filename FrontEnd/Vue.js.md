@@ -7,6 +7,8 @@
 
 참고 경로 : https://be-a-weapon.tistory.com/197
 
+동적 컴포넌트 & keep-alive 사용 예시 : https://javascript.plainenglish.io/using-vue-keep-alive-component-to-save-the-state-of-dynamic-components-e52144e2260e
+
 
 ## keep-alive
 
