@@ -29,3 +29,10 @@ ex) 코딩 팁 : tab 컴포넌트 만들 때, tab 컨텐츠 중 일부만 keep-a
 * https://kr.vuejs.org/v2/api/index.html
 * https://velog.io/@kyusung/VUE-keep-alive
 * 사용 예시 : https://sunny921.github.io/posts/vuejs-keep-alive/
+
+
+## Render Function
+* createElement
+* JSX (React, Solid 범용 가능)
+
+참고 경로 : https://kr.vuejs.org/v2/guide/render-function.html
