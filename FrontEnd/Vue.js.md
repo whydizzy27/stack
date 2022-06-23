@@ -12,16 +12,13 @@
 
 ## keep-alive
 
-keep-alive로 대상 컴포넌트가 리렌더링되는 리소스를 절약할 수 있음. (비활성 컴포넌트 인스턴스를 파괴하지 않고 캐시함)
-keep-alive 엘리먼트로 둘러 쌓인 컴포넌트는 최초 생성(created)시점에 캐시되어 다른 컴포넌트에 다녀오더라도 페이지의 새로고침이 발생하기 전까지 data의 상태 유지.
-created, mounted 훅은 최초 1회만 호출. 인스턴스 destroy 관련 훅은 호출되지 않음. 
-activated deactivated 훅은 해당 컴포넌트 활성/비활성 때마다 호출됨.
-
-keep alive 사용 예시 : https://sunny921.github.io/posts/vuejs-keep-alive/
-
-
-킵얼라이브 태그 내 하나의 자식만 렌더링됨. v-for 사용 시 작동하지 않음.
+* keep-alive로 대상 컴포넌트가 리렌더링되는 리소스를 절약할 수 있음. (비활성 컴포넌트 인스턴스를 파괴하지 않고 캐시함)
+* keep-alive 엘리먼트로 둘러 쌓인 컴포넌트는 최초 생성(created)시점에 캐시되어 다른 컴포넌트에 다녀오더라도 페이지의 새로고침이 발생하기 전까지 data의 상태 유지.
+* created, mounted 훅은 최초 1회만 호출. 인스턴스 destroy 관련 훅은 호출되지 않음. 
+* activated deactivated 훅은 해당 컴포넌트 활성/비활성 때마다 호출됨.
+* 킵얼라이브 태그 내 하나의 자식만 렌더링됨. v-for 사용 시 작동하지 않음.
 
 참고 경로 : 
 * https://kr.vuejs.org/v2/api/index.html
 * https://velog.io/@kyusung/VUE-keep-alive
+* 사용 예시 : https://sunny921.github.io/posts/vuejs-keep-alive/
