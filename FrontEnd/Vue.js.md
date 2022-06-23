@@ -34,5 +34,6 @@ ex) 코딩 팁 : tab 컴포넌트 만들 때, tab 컨텐츠 중 일부만 keep-a
 ## Render Function
 * createElement
 * JSX (React, Solid 범용 가능)
+* 버튼, 아코디언과 같은 공용컴포넌트 만들 때 template 없이 Render Function 사용하는 것이 베스트.
 
 참고 경로 : https://kr.vuejs.org/v2/guide/render-function.html
