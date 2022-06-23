@@ -23,3 +23,7 @@ this.$route.params
 ~~~
 
 출처: https://ordinary-code.tistory.com/126 [김평범's OrdinaryCode:티스토리]
+
+
+## clinet-only
+SSR 페이지 내 <client-only> 엘리먼트로 감싸진 영역은 CSR.
