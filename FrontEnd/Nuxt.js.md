@@ -26,4 +26,4 @@ this.$route.params
 
 
 ## clinet-only
-SSR 페이지 내 <client-only> 엘리먼트로 감싸진 영역은 CSR.
+SSR 페이지 내 `<client-only>` 엘리먼트로 감싸진 영역은 CSR.
