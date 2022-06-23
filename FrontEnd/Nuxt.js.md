@@ -14,7 +14,7 @@ https://velog.io/@chaerin00/Nuxt-asyncData%EC%99%80-fetch%EC%9D%98-%EC%B0%A8%EC%
 ~~~
 * query 파라미터 받기
 ~~~
-this$route.query
+this.$route.query
 ~~~
 
 * params > 동적라우터 (/page/_id.vue)
