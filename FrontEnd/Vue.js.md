@@ -20,7 +20,7 @@
 * created, mounted, ..., beforeDestroy 훅은 최초 1회만 호출. destroy 훅은 호출되지 않음.  
   
   (beforeDestroy 훅 호출 시점 : router경로 이탈. ex) 상세 페이지에서 메인으로 나갔을 때 )
-* activated deactivated 훅은 해당 컴포넌트 활성/비활성 때마다 호출됨. (mounted 훅 이후에 activated 훅 )
+* activated deactivated 훅은 해당 컴포넌트 활성/비활성 때마다 호출됨. (mounted 훅 이후에 activated 훅 호출)
 * 킵얼라이브 태그 내 하나의 자식만 렌더링됨. v-for 사용 시 작동하지 않음.
 
 참고 경로 : 
