@@ -1,4 +1,7 @@
 # Vue.js
+## Lifecycle
+### Mounted
+* 자식컴포넌트부터 렌더링됨.
 
 ## Built-In Components
 
