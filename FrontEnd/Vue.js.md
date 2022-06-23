@@ -21,6 +21,8 @@
   
   (beforeDestroy 훅 호출 시점 : router경로 이탈. ex) 상세 페이지에서 메인으로 나갔을 때 )
 * activated deactivated 훅은 해당 컴포넌트 활성/비활성 때마다 호출됨. (mounted 훅 이후에 activated 훅 호출)
+
+ex) 코딩 팁 : tab 컴포넌트 만들 때, tab 컨텐츠 중 일부만 keep-alive 적용하고 싶다 하면 일단 전체 keep-alive 로 감싼 후 keep-alive 미적용 컴포넌트의 activated 훅에서 api 호출해주면 됨.
 * 킵얼라이브 태그 내 하나의 자식만 렌더링됨. v-for 사용 시 작동하지 않음.
 
 참고 경로 : 
