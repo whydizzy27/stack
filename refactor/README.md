@@ -1,4 +1,5 @@
 # refactor
+* if 사용 시 else 사용 최소화. return 활용.
 
 ## Vue.js
 ### 라우팅
