@@ -15,6 +15,7 @@
 
 ### 함수 분리
 데이터를 가져오는 용도와 가져온 데이터를 가공하는 용도를 분리하여 함수를 구현해야함.
+조회와 가공을 같은 함수에서 하면 단위테스트 불가.
 
 ```
 fetchBookList(){
@@ -25,7 +26,20 @@ fetchBookList(){
 ```
 ```
 getBookList(){
+  // 조회 데이터 가공
   const response = this.fetchBookList()
   this.bookList = response.bookList
 }
+```
+
+### 정적 변수 관리
+값 변경이 없는 변수는 data 내 선언하지 않고 import 단에 const로 선언. data에는 값 변동이 있는 변수만 적재.
+```
+const rowSize = 10
+```
+
+### data 내 변수 할당
+* api response를 통째로 data 변수에 할당해서는 안됨. 코드 추적이 어려움. 명확하게 명시 필요.
+```
+this.allCnt = response.allCnt
 ```
