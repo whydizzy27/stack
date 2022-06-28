@@ -38,41 +38,57 @@ getData(function(tableData) {
 * Fulfilled(이행) : 비동기 처리가 완료되어 프로미스가 결과 값을 반환해준 상태
 * Rejected(실패) : 비동기 처리가 실패하거나 오류가 발생한 상태
 
-#### 이행 예시
+#### 이행/실패 예시
 ```
-function getData(callback) {
+function getData() {
   // new Promise() 추가 시 Pending 상태가 되며 resolve와 reject를 인자로 가지는 콜백함수 선언.
   return new Promise(function(resolve, reject) {
     $.get('url 주소/products/1', function(response) {
-      // 데이터를 받으면 resolve() 호출
-      resolve(response);
+      if (response) {
+        // 데이터를 받으면 resolve() 호출. Promise 이행 상태로 전환.
+        resolve(response);
+      }
+      // Promise 실패 상태로 전환.
+      reject(new Error("Request is failed"));
     });
   });
 }
 
+// 위 $.get() 호출 결과에 따라 'response' 또는 'Error' 출력
 // getData()의 실행이 끝나면 호출되는 then()
-getData().then(function(tableData) {
-  // resolve()의 결과 값이 여기로 전달됨(response 데이터가 전달됨)
-  console.log(tableData); // $.get()의 reponse 값이 tableData에 전달됨
+getData().then(function(data) {
+  // resolve()의 결과 값이 data인자로 전달됨(response 데이터가 전달됨)
+  console.log(data); // response 값 출력
+}).catch(function(err) {
+  // reject()의 결과 값 Error를 err에 받음(catch로)
+  console.error(err); // Error 출력
 });
 
 출처 : https://joshua1988.github.io/web-development/javascript/promise-for-beginners/
 ```
-#### 실패 예시
-```
-function getData() {
-  return new Promise(function(resolve, reject) {
-    reject(new Error("Request is failed"));
-  });
-}
 
-// reject()의 결과 값 Error를 err에 받음(catch로)
-getData().then().catch(function(err) {
-  console.log(err); // Error: Request is failed
+#### Promise Chaining
+then() 메소드를 호출하고 나면 새로운 프로미스 객체가 리턴됨. 이를 활용하여 체이닝 가능.
+```
+new Promise(function(resolve, reject){
+  setTimeout(function() {
+    resolve(1);
+  }, 2000);
+})
+.then(function(result) {
+  console.log(result); // 1
+  return result + 10;
+})
+.then(function(result) {
+  console.log(result); // 11
+  return result + 20;
+})
+.then(function(result) {
+  console.log(result); // 31
 });
 
+출처 : https://joshua1988.github.io/web-development/javascript/promise-for-beginners/
 ```
-
 ### 해결안 3 ) async & await
 
 
