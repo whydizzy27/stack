@@ -124,7 +124,18 @@ async function logTodoTitle() {
 
 출처 : https://joshua1988.github.io/web-development/javascript/js-async-await/
 ```
+Promise 객체를 이렇게도 받을 수 있음. (.json 붙여서)
+```
+async function showAvatar() {
 
+  // JSON 읽기
+  let response = await fetch('/article/promise-chaining/user.json');
+  let user = await response.json();
+  
+  ...
+  
+  출처 : https://ko.javascript.info/async-await
+```
 
 ## Arrow Function
 ## Closure
