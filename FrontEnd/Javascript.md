@@ -96,6 +96,20 @@ API 호출 또는 setTimeout() 결과가 Promise 객체가 아닌 new Promise �
 
 #### async & await 예외 처리 예시
 ```
+function fetchUser() {
+  var url = 'https://jsonplaceholder.typicode.com/users/1'
+  return fetch(url).then(function(response) {
+    return response.json();
+  });
+}
+
+function fetchTodo() {
+  var url = 'https://jsonplaceholder.typicode.com/todos/1';
+  return fetch(url).then(function(response) {
+    return response.json();
+  });
+}
+
 async function logTodoTitle() {
   try {
     var user = await fetchUser();
