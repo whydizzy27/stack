@@ -89,9 +89,28 @@ new Promise(function(resolve, reject){
 
 출처 : https://joshua1988.github.io/web-development/javascript/promise-for-beginners/
 ```
+API 호출 또는 setTimeout() 결과가 Promise 객체가 아닌 new Promise 결과가 Promise 객체다. 혼동X.
+
 ### 해결안 3 ) async & await
+일반적으로 await의 대상이 되는 비동기 처리 코드는 Axios 등 프로미스를 반환하는 API 호출 함수.
 
+#### async & await 예외 처리 예시
+```
+async function logTodoTitle() {
+  try {
+    var user = await fetchUser();
+    if (user.id === 1) {
+      var todo = await fetchTodo();
+      console.log(todo.title); // delectus aut autem
+    }
+  } catch (error) {
+    console.log(error);
+  }
+}
 
+출처 : https://joshua1988.github.io/web-development/javascript/js-async-await/
+```
 
 
 ## Arrow Function
+## Closure
