@@ -12,3 +12,20 @@
 
 ### Browser
 * 전 페이지 스크롤 위치 유지(스냅샷)는 브라우저 기능이다. keep-alive와 관련 없음.
+
+### 함수 분리
+데이터를 가져오는 용도와 가져온 데이터를 가공하는 용도를 분리하여 함수를 구현해야함.
+
+```
+fetchBookList(){
+  // 조회 API 호출 함수
+  ...
+  return result
+}
+```
+```
+getBookList(){
+  const response = this.fetchBookList()
+  this.bookList = response.bookList
+}
+```
