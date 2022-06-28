@@ -28,6 +28,6 @@ getData(function(tableData) {
 
 ### 해결안 2 ) Promise
 #### Promise 란?
-자바스크립트 비동기 처리에 사용되는 
+자바스크립트 비동기 처리에 사용되는 객체
 
 ### 해결안 3 ) async & await
