@@ -167,6 +167,8 @@ const add = (a,b) => a+b;
 
 ## Hoisting (Scope & Closure)
 
+참고 경로 : https://kim-solshar.tistory.com/39
+
 #### 함수 표현식과 함수 선언식
 ```
 // 함수 표현식
@@ -184,5 +186,36 @@ console.log(add(1,2)); //3
 출처: https://kim-solshar.tistory.com/57
 ```
 
+#### Scope
+
+자바스크립트의 함수 내에서 선언된 변수는 함수 전체를 유효한 스코프로 가짐. (함수 스코프를 따름)
+```
+function foo() {
+    if (true) {
+        var color = 'blue';
+    }
+    console.log(color); // blue
+}
+foo();
+
+출처: https://kim-solshar.tistory.com/39
+```
+#### Hoisting
+
+자바스크립트 엔진은 내부에서 할당된 변수를 무조건 함수의 시작 위치로 끌어올려서 선언한다.
+```
+// 위 예제를 다음과 같이 처리한다.
+function foo() {
+    var color;
+
+    if (true) {
+        color = 'blue';
+    }
+    console.log(color); // blue
+}
+foo();
+
+출처: https://kim-solshar.tistory.com/39
+```
 
 ## 함수형 프로그래밍
