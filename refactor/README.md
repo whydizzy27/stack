@@ -25,9 +25,9 @@ fetchBookList(){
 }
 ```
 ```
-getBookList(){
+async getBookList(){
   // 조회 데이터 가공
-  const response = this.fetchBookList()
+  const response = await this.fetchBookList()
   this.bookList = response.bookList
 }
 ```
