@@ -20,8 +20,7 @@
 ```
 fetchBookList(){
   // 조회 API 호출 함수
-  ...
-  return result
+  return ...
 }
 ```
 ```
