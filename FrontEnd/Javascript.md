@@ -137,5 +137,52 @@ async function showAvatar() {
   출처 : https://ko.javascript.info/async-await
 ```
 
+
 ## Arrow Function
-## Closure
+```
+//es5
+var add = function(a,b){
+    return a+b;
+}
+//es6 - arrow function
+const add = (a,b) => {
+    return a + b;
+}
+
+//매개변수가 1개라면 소괄호도 생략할수있다.
+const square = x => { return x*x };
+
+//한줄로 작성 가능한 경우 중괄호와 return 키워드도 생략 가능하다.
+const square = x => x*x;
+const add = (a,b) => a+b;
+
+//매개 변수가 없는 경우
+() => { return { value : 1 }; }
+
+//객체를 함수의 몸체와 구분해주기 위해 소괄호를 사용한다
+() => ( { value : 1 } );
+
+출처: https://kim-solshar.tistory.com/57
+```
+
+## Hoisting (Scope & Closure)
+
+#### 함수 표현식과 함수 선언식
+```
+// 함수 표현식
+var square = function(x){
+    return x*x;
+}
+console.log(square(10)); // 100
+
+// 함수 선언식
+function add(a, b){
+    return a + b;
+}
+console.log(add(1,2)); //3
+
+출처: https://kim-solshar.tistory.com/57
+```
+
+
+## 함수형 프로그래밍
