@@ -100,7 +100,7 @@ new Promise(function(resolve, reject){
 API 호출 또는 setTimeout() 결과가 Promise 객체가 아닌 new Promise 결과가 Promise 객체다. 혼동X.
 
 ### 해결안 3 ) async & await
-일반적으로 await의 대상이 되는 비동기 처리 코드는 Axios 등 프로미스를 반환하는 API 호출 함수.
+일반적으로 await의 대상이 되는 비동기 처리 코드는 Axios, setTimeout 등 프로미스를 반환하는 API 호출 함수.
 
 #### async & await 예외 처리 예시
 fetch() 함수는 브라우저 내장 함수임. Promise 객체를 리턴함.
@@ -145,6 +145,16 @@ async function showAvatar() {
   
   출처 : https://ko.javascript.info/async-await
 ```
+
+#### await vs return vs return await
+참고 경로 : https://yeoulcoding.me/99
+
+위 경로 예시&설명 참고할 것.
+
+* function 앞에 async를 붙이면 해당 함수는 항상 Promise 객체를 반환한다. 명시적으로 Promise 객체를 반환하지 않는 경우, Promise 객체가 아닌 것은 Promise 객체로 변환 후에 반환한다.
+* async 함수인데 Promise 리턴 값을 명시해주지 않으면 Promise{<resolved>:undefined} 를 반환하게 된다.
+* 호출한 자식 함수가 async 함수이면 동기적으로 동작시키기 위해서 부모 함수에도 async await 걸어줘야함.
+* 보완필요.#######################################
 
 
 ## Arrow Function
