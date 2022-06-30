@@ -22,6 +22,12 @@ getData(function(tableData) {
 
 출처 : https://joshua1988.github.io/web-development/javascript/javascript-asynchronous-operation/
 ```
+```
+// setTimeout에 콜백함수 사용법.
+setTimeout(()=>{
+   ... // 콜백 함수
+})
+```
 문제점 : 콜백지옥
 
 해결안 : Promise 또는 Async
