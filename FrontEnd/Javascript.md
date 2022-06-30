@@ -23,10 +23,12 @@ getData(function(tableData) {
 출처 : https://joshua1988.github.io/web-development/javascript/javascript-asynchronous-operation/
 ```
 ```
-// setTimeout에 콜백함수 사용법.
+// setTimeout 사용법.
 setTimeout(()=>{
-   ... // 콜백 함수
-})
+   console.log('bye')
+}, 3000)
+
+console.log('hello') // hello가 먼저 찍힌 후 3초 후 bye가 찍힌다.
 ```
 문제점 : 콜백지옥
 
