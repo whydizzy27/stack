@@ -76,7 +76,7 @@ getData().then(function(data) {
 ```
 
 #### Promise Chaining
-then() 메소드를 호출하고 나면 새로운 프로미스 객체가 리턴됨(return 있을 시만). 이를 활용하여 체이닝 가능.
+then() 메소드를 호출하고 나면 새로운 프로미스 객체가 리턴됨(return 없을 시 undefined 전달.). 이를 활용하여 체이닝 가능.
 ```
 new Promise(function(resolve, reject){
   setTimeout(function() {
