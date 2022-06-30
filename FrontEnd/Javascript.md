@@ -103,6 +103,7 @@ API 호출 또는 setTimeout() 결과가 Promise 객체가 아닌 new Promise �
 일반적으로 await의 대상이 되는 비동기 처리 코드는 Axios 등 프로미스를 반환하는 API 호출 함수.
 
 #### async & await 예외 처리 예시
+fetch() 함수는 브라우저 내장 함수임. Promise 객체를 리턴함.
 ```
 function fetchUser() {
   var url = 'https://jsonplaceholder.typicode.com/users/1'
