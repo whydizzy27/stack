@@ -76,7 +76,7 @@ getData().then(function(data) {
 ```
 
 #### Promise Chaining
-then() 메소드를 호출하고 나면 새로운 프로미스 객체가 리턴됨(return 없을 시 undefined 전달.). 이를 활용하여 체이닝 가능.
+then() 메소드를 호출하고 나면 새로운 프로미스 객체가 리턴됨(return 없을 시 undefined 프로미스 객체 전달.). 이를 활용하여 체이닝 가능.
 ```
 new Promise(function(resolve, reject){
   setTimeout(function() {
@@ -100,7 +100,7 @@ new Promise(function(resolve, reject){
 API 호출 또는 setTimeout() 결과가 Promise 객체가 아닌 new Promise 결과가 Promise 객체다. 혼동X.
 
 ### 해결안 3 ) async & await
-일반적으로 await의 대상이 되는 비동기 처리 코드는 Axios, setTimeout 등 프로미스를 반환하는 API 호출 함수.
+일반적으로 await의 대상은 프로미스 객체를 반환하는 API 호출 함수다.
 
 #### async & await 예외 처리 예시
 fetch() 함수는 브라우저 내장 함수임. Promise 객체를 리턴함.
@@ -149,13 +149,35 @@ async function showAvatar() {
 #### await vs return vs return await
 참고 경로 : https://yeoulcoding.me/99
 
-위 경로 예시&설명 참고할 것.
-
 * function 앞에 async를 붙이면 해당 함수는 항상 Promise 객체를 반환한다. 명시적으로 Promise 객체를 반환하지 않는 경우, Promise 객체가 아닌 것은 Promise 객체로 변환 후에 반환한다.
-* async 함수인데 Promise 리턴 값을 명시해주지 않으면 Promise{<resolved>:undefined} 를 반환하게 된다.
-* 호출한 자식 함수가 async 함수이면 동기적으로 동작시키기 위해서 부모 함수에도 async await 걸어줘야함.
-* 보완필요.#######################################
+* async 함수인데 리턴 값을 명시해주지 않으면 Promise{<resolved>:undefined} 를 반환하게 된다.
+* async await 는 비동기 로직을 동기 로직처럼 순차 실행시키기 위함.
 
+```
+async fetch(){
+   await this.getBookList(1) // Promise 객체를 리턴하는 비동기함수
+   console.log('hello')
+}
+
+// getBookList 함수 로직이 모두 실행된 후 hello 콘솔이 찍힌다. (순서보장)
+```
+* 자바스크립트 비동기 처리로는 VUE 라이프사이클 훅 시점 제어가 불가하다.
+```
+async created(){
+   const Delay = () => new Promise((resolve) => setTimeout(resolve, 10000))
+   console.log('created 1')
+   await Delay()
+   console.log('created 2')
+}
+	
+mounted(){
+   console.log('mounted')	
+}
+	
+// created1 > mounted > created2 순으로 찍힌다.
+```
+* 함수에 async가 붙지 않았다해서 Promise 객체로 넘기지 못하는 것은 아님. 반대로 async가 붙으면 무조건 Promise 객체로 리턴.
+* then() 메소드를 호출하고 나면 새로운 프로미스 객체가 리턴됨(return 없을 시 undefined 프로미스 객체 전달.).
 
 ## Arrow Function
 ```
