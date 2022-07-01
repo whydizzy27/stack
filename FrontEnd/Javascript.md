@@ -152,6 +152,7 @@ async function showAvatar() {
 * function 앞에 async를 붙이면 해당 함수는 항상 Promise 객체를 반환한다. 명시적으로 Promise 객체를 반환하지 않는 경우, Promise 객체가 아닌 것은 Promise 객체로 변환 후에 반환한다.
 * async 함수인데 리턴 값을 명시해주지 않으면 Promise{<resolved>:undefined} 를 반환하게 된다.
 * async await 는 비동기 로직을 동기 로직처럼 순차 실행시키기 위함.
+  Promise 객체를 리턴하는 함수는 await를 걸어줌으로써 실행 시점을 제어할 수 있으며 리턴된 Promise 객체가 빈 Promise 객체더라도 제어 가능하다.
 
 ```
 async fetch(){
@@ -176,7 +177,7 @@ mounted(){
 	
 // created1 > mounted > created2 순으로 찍힌다.
 ```
-* 함수에 async가 붙지 않았다해서 Promise 객체로 넘기지 못하는 것은 아님. 반대로 async가 붙으면 무조건 Promise 객체로 리턴.
+* 함수에 async가 붙지 않았다해서 Promise 객체로 넘기지 못하는 것은 아님(async 없어도 return 으로 넘기기 가능). 반대로 async가 붙으면 무조건 Promise 객체로 리턴.
 * then() 메소드를 호출하고 나면 새로운 프로미스 객체가 리턴됨(return 없을 시 undefined 프로미스 객체 전달.).
 
 ## Arrow Function
