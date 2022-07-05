@@ -30,3 +30,21 @@
 * 한 가지의 기능만 담당하는 개별적이고 심플한 서비스 작성
 
 #### => KISS한 System 구축 가능
+
+
+##### 예시1
+```
+// isEven 에 따라 첫 짝수/홀수를 리턴하는 함수 : original
+function getFirst(array, isEven){
+   return array.find(x => (isEvent ? x % 2 === 0 : x % 2 !== 0));
+}
+
+// 삼항연산자를 제거해 가독성을 높이고 짝수/홀수 리턴하는 별개 함수로 나눔 : refactor
+function getFirstOdd(array){
+   return array.find(x => x % 2 !== 0);
+}
+
+function getFirstEven(array){
+   return array.find(x => x % 2 === 0);
+}
+```
