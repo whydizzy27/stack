@@ -39,7 +39,7 @@ function getFirst(array, isEven){
    return array.find(x => (isEvent ? x % 2 === 0 : x % 2 !== 0));
 }
 
-// 삼항연산자를 제거해 가독성을 높이고 짝수/홀수 리턴하는 별개 함수로 나눔 : refactor
+// 삼항연산자를 제거해 가독성을 높이고 첫 짝수/홀수 리턴하는 별개 함수로 나눔 : refactor
 function getFirstOdd(array){
    return array.find(x => x % 2 !== 0);
 }
