@@ -48,3 +48,19 @@ function getFirstEven(array){
    return array.find(x => x % 2 === 0);
 }
 ```
+
+##### 예시2
+```
+// original
+function updateAndPrint(rawData){
+   ...
+}
+
+// 기능분리함으로써 개별적으로 update와 print가 가능해짐 : refactor
+function update(rawData){
+   ...
+}
+function print(rawData){
+   ...
+}
+```
