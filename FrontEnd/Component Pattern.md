@@ -10,7 +10,7 @@
 * 페이지 구성
 index : import container
 container : import presenter
-* 
+
 -> Container는 온전히 비지니스 로직만 / Presenter는 온전히 보여지는 view(로직의 결과)만 고려하여 유지보수의 용이성을 지니게 됨
 
 
