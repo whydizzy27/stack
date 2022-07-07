@@ -66,6 +66,10 @@ console.log(message); // => 'Hello World!'
 
 따라서, 실제로 함수가 실행되는 환경에서 this가 무엇을 가리킬지 고려해야함.
 
+#### 2. 메소드 실행
+
+
+
 ## Hoisting (Scope & Closure)
 
 참고 경로 : https://kim-solshar.tistory.com/39
