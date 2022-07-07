@@ -1,4 +1,4 @@
-# Javascript
+# Arrow Function & Hoisting
 
 ## Arrow Function
 ```
