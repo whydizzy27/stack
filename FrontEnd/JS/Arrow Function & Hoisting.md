@@ -1,6 +1,7 @@
 # Arrow Function & Hoisting
 
 ## Arrow Function
+참고 경로 : https://kim-solshar.tistory.com/57
 ```
 //es5
 var add = function(a,b){
@@ -24,8 +25,46 @@ const add = (a,b) => a+b;
 //객체를 함수의 몸체와 구분해주기 위해 소괄호를 사용한다
 () => ( { value : 1 } );
 
-출처: https://kim-solshar.tistory.com/57
 ```
+
+~~### Hoisting 연관부분 보완필요~~
+
+### This
+
+Arrow Function 내 this 전에 자바스크립트 전체적인 this 사용법 먼저 설명.
+
+참고 경로 : https://kim-solshar.tistory.com/42
+
+실행 문맥에 따라 다르게 동작
+* 함수 실행
+* 메소드(함수 내부의) 실행
+* 생성자 실행
+* 간접 실행
+
+
+1. 함수 실행
+
+(1) 함수와 메소드 구분
+* 메소드란 객체 내부의 속성이다.
+```
+function hello(name) {  
+  return 'Hello ' + name + '!';
+}
+// 함수 실행
+var message = hello('World');  
+console.log(message); // => 'Hello World!'
+```
+함수 : hello 함수 실행.
+
+메소드 : console 객체(자바스크립트에서 제공)의 log 메소드 호출.
+
+(2) 함수 실행에서의 this
+전역객체(window)를 가리킴.
+
+(3) 실행문맥이란?
+-> 함수가 작성됐을 때가 아닌 실행될 당시의 문맥을 의미.
+
+따라서, 실제로 함수가 실행되는 환경에서 this가 무엇을 가리킬지 고려해야함.
 
 ## Hoisting (Scope & Closure)
 
