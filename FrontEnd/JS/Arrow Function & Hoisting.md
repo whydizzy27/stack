@@ -41,10 +41,7 @@ Arrow Function 내 this 전에 자바스크립트 전체적인 this 사용법 �
 * 생성자 실행
 * 간접 실행
 
-
-#### 1. 함수 실행
-
-(1) 함수와 메소드 구분
+#### 함수와 메소드 구분
 * 메소드란 객체 내부의 속성이다.
 ```
 function hello(name) {  
@@ -54,19 +51,28 @@ function hello(name) {
 var message = hello('World');  
 console.log(message); // => 'Hello World!'
 ```
-함수 : hello 함수 실행.
+* 함수 : hello 함수 실행.
+* 메소드 : console 객체(자바스크립트에서 제공)의 log 메소드 호출.
 
-메소드 : console 객체(자바스크립트에서 제공)의 log 메소드 호출.
+-> 함수와 메소드는 this의 실행 문맥이 달라지기 때문에 구분이 매우 중요함.
 
-(2) 함수 실행에서의 this
+#### 1. 함수 실행
+
+##### 함수 실행에서의 this
+![image](https://user-images.githubusercontent.com/67194249/177711779-c7f1d7fb-3c39-491a-a354-7a25761fe575.png)
+
 전역객체(window)를 가리킴.
 
-(3) 실행문맥이란?
--> 함수가 작성됐을 때가 아닌 실행될 당시의 문맥을 의미.
+##### 실행문맥이란?
+함수가 작성됐을 때가 아닌 실행될 당시의 문맥을 의미.
 
 따라서, 실제로 함수가 실행되는 환경에서 this가 무엇을 가리킬지 고려해야함.
 
 #### 2. 메소드 실행
+![image](https://user-images.githubusercontent.com/67194249/177712451-a8b6824b-5d25-45b2-8dfd-a8d92ee8da19.png)
+
+* 메소드 실행에서의 this는 메소드를 소유하고 있는 객체를 가리킴. 즉, 객체 내부의 속성으로 정의된 함수가 실행될 때 this는 객체 자신이 됨.
+* myObject 객체의 myMethod 메소드를 실행하기 위해서는 반드시 속성 접근자를 사용해야 한다.
 
 
 
