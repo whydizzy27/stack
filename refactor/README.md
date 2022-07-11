@@ -42,3 +42,34 @@ const rowSize = 10
 ```
 this.allCnt = response.allCnt
 ```
+
+### 가독성 올리기
+#### 예시1
+```
+// 지양
+this.set(this.fetchA(), this.fetchB(), ...)
+
+// 지향
+const rsltA = this.fetchA()
+const rsltB = this.fetchB()
+
+this.set(rsltA, rsltB, ...)
+```
+
+#### 예시2
+```
+// 지양
+if( A조건 && ( B조건 || C조건 )) {
+
+// 지향 (가독성 괜찮으면 굳이 뺄 필요 없음)
+const rslt = B조건 || C조건
+if( A조건 && rslt ) {
+```
+
+### boolean 값 prefix
+* is~
+* use~
+* has~
+
+### for, forEach 사용 지양
+* Pure 함수 사용
