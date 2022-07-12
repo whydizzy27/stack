@@ -71,5 +71,4 @@ if( A조건 && rslt ) {
 * use~
 * has~
 
-### for, forEach 사용 지양
-* Pure 함수 사용
+
