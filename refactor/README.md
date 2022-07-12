@@ -71,4 +71,6 @@ if( A조건 && rslt ) {
 * use~
 * has~
 
-
+### setTimeout 대신 nextTick 활용하기
+* 렌더링 후 호출되는 함수나 렌더링 시점인 mounted 훅에서 주로 사용(DOM update)
+* setTimeout은 환경에 따라 시점이 달라져 불안정함.
