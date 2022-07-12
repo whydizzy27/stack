@@ -66,6 +66,22 @@ const rslt = B조건 || C조건
 if( A조건 && rslt ) {
 ```
 
+#### 예시3
+```
+// 지양
+if(val === 'A' || val === 'B'){
+
+// 지향 (대상 개수가 많아질 수록 가독성 높아짐)
+if( ['A', 'B'].includes(val) ) {  // true
+```
+
+참고 경로 : https://wakestand.tistory.com/302
+
+![image](https://user-images.githubusercontent.com/67194249/178448241-a12c5e3b-9267-4d2e-aacf-de788bda7e4c.png)
+![image](https://user-images.githubusercontent.com/67194249/178448313-dd5e4bb3-b68f-4127-b7ae-c61e47b90f13.png)
+
+some 사용 시 : 여러 값 중에 하나가 들었을 경우를 확인하는 경우
+
 ### boolean 값 prefix
 * is~
 * use~
@@ -74,3 +90,5 @@ if( A조건 && rslt ) {
 ### setTimeout 대신 nextTick 활용하기
 * 렌더링 후 호출되는 함수나 렌더링 시점인 mounted 훅에서 주로 사용(DOM update)
 * setTimeout은 환경에 따라 시점이 달라져 불안정함.
+
+
