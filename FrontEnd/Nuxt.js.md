@@ -4,6 +4,8 @@
 
 https://velog.io/@chaerin00/Nuxt-asyncData%EC%99%80-fetch%EC%9D%98-%EC%B0%A8%EC%9D%B4
 
+* ~~~내용 보완 필요~~~
+
 ### asyncData의 파라미터
 
 참고 경로 : https://joshua1988.github.io/vue-camp/nuxt/data-fetching.html#asyncdata
