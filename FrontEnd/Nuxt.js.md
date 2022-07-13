@@ -39,6 +39,10 @@ SSR 페이지 내 `<client-only>` 엘리먼트로 감싸진 영역은 CSR.
 
 ## Lifecycle
 
+참고 경로 : https://nuxtjs.org/docs/concepts/nuxt-lifecycle/
+
+* ~~Server 와 Client 의 Lifecycle 차이, 순서 숙지 후 내용 보완 필요~~
+
 ### fetch
 * fetchOnServer : 기본값 true. 값이 false면 client-side 에서만 호출됨. true면 server-side에서만 호출됨.
 
@@ -56,3 +60,6 @@ created(){
   }
 }
 ```
+
+### mounted
+* CSR 때만 
