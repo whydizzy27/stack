@@ -62,4 +62,6 @@ created(){
 ```
 
 ### mounted
-* CSR 때만 
+* CSR 때만 호출
+
+
