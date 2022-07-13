@@ -34,6 +34,9 @@ this.$route.params
 
 출처: https://ordinary-code.tistory.com/126 [김평범's OrdinaryCode:티스토리]
 
+### 라우팅 CSR vs SSR
+* SSR : a태그 href, nuxt-link, 브라우저 주소창에 주소입력(새로고침)
+* CSR : router.push
 
 ## clinet-only
 SSR 페이지 내 `<client-only>` 엘리먼트로 감싸진 영역은 CSR.
