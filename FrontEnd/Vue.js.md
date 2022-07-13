@@ -37,3 +37,10 @@ ex) 코딩 팁 : tab 컴포넌트 만들 때, tab 컨텐츠 중 일부만 keep-a
 * 버튼, 아코디언과 같은 공용컴포넌트 만들 때 template 없이 Render Function 사용하는 것이 베스트.
 
 참고 경로 : https://kr.vuejs.org/v2/guide/render-function.html
+
+
+## router
+#### ```$router``` 객체에서 제공하는 네비게이션 메소드
+참고 경로 : https://sunny921.github.io/posts/vuejs-router-03/
+
+![image](https://user-images.githubusercontent.com/67194249/178636201-27566ca5-9a95-40a7-a69f-23234de4956e.png)
