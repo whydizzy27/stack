@@ -49,7 +49,7 @@ SSR 페이지 내 `<client-only>` 엘리먼트로 감싸진 영역은 CSR.
 * ~~Server 와 Client 의 Lifecycle 차이, 순서 숙지 후 내용 보완 필요~~
 
 ### fetch
-* fetchOnServer : 기본값 true. 값이 false면 client-side 에서만 호출됨. true면 server-side에서만 호출됨.
+* fetchOnServer : 기본값 true. 값이 false면 CSR에서만 훅 호출됨. true면 SSR에서만 훅 호출됨.
 
 ### created
 * SSR 대상 컴포넌트일 경우, 총 2번 호출(SSR, CSR)
