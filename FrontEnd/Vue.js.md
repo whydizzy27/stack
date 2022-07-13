@@ -40,7 +40,11 @@ ex) 코딩 팁 : tab 컴포넌트 만들 때, tab 컨텐츠 중 일부만 keep-a
 
 
 ## router
-#### ```$router``` 객체에서 제공하는 네비게이션 메소드
+### ```$router``` 객체에서 제공하는 네비게이션 메소드
 참고 경로 : https://sunny921.github.io/posts/vuejs-router-03/
 
 ![image](https://user-images.githubusercontent.com/67194249/178636201-27566ca5-9a95-40a7-a69f-23234de4956e.png)
+
+#### 예시1
+* A 페이지 진입 시 세션이 없으면 자동으로 B 페이지로 라우팅시켜야 하는 경우 -> replace 사용
+* push 사용 시 B 페이지에서 뒤로가기가 허용되게 되고 뒤로가기 클릭 시 A 페이지로 이동, 자동 B 페이지 라우팅하게 되므로 의미없는 라우팅 반복..
