@@ -1,5 +1,10 @@
 # Nuxt.js
 
+## CSR vs SSR
+
+### SSR 대상 화면 동작 원리
+* SSR 시점 인스턴스 생성 1회 (템플릿, 스크립트 )
+
 ## asyncData vs fetch
 
 https://velog.io/@chaerin00/Nuxt-asyncData%EC%99%80-fetch%EC%9D%98-%EC%B0%A8%EC%9D%B4
