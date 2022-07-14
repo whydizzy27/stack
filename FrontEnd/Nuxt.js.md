@@ -3,7 +3,8 @@
 ## CSR vs SSR
 
 ### SSR 대상 화면 동작 원리
-* SSR 시점 인스턴스 생성 1회 (템플릿, 스크립트 )
+* SSR 시점 인스턴스 생성 1회 (템플릿, 스크립트(여기에 HTML, store 요소 값 들어있음) 리딩)
+* CSR 시점 인스턴스 생성 1회 (서버에서 받은 SSR 인스턴스 정보를 읽고 SSR 때 변동 있었던 store 요소 변환값 적용)
 
 ## asyncData vs fetch
 
