@@ -4,7 +4,7 @@
 
 https://velog.io/@chaerin00/Nuxt-asyncData%EC%99%80-fetch%EC%9D%98-%EC%B0%A8%EC%9D%B4
 
-![image](https://user-images.githubusercontent.com/67194249/178662727-ab4794f5-31d4-49e8-90f4-824d144eacfe.png)
+<img src="https://user-images.githubusercontent.com/67194249/178662727-ab4794f5-31d4-49e8-90f4-824d144eacfe.png" width="300" height="500">
 
 ~~내용 보완 필요~~
 
