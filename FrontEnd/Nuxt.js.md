@@ -3,8 +3,10 @@
 ## CSR vs SSR
 
 ### SSR 대상 화면 동작 원리
-* SSR 시점 인스턴스 생성 1회 (템플릿, 스크립트(여기에 HTML, store 요소 값 들어있음) 리딩)
+* SSR 시점 인스턴스 생성 1회 (템플릿, 스크립트(여기에 HTML 템플릿, store 요소 값 들어있음) 리딩)
 * CSR 시점 인스턴스 생성 1회 (서버에서 받은 SSR 인스턴스 정보를 읽고 SSR 때 변동 있었던 store 요소 변환값 적용)
+* created 훅은 SSR, CSR 각각 1회씩 호출됨. mounted는 CSR만.
+* computed(created 훅과 동일시점), watch(immediate:true)도 SSR, CSR 각각 최초 1회 호출됨.
 
 ## asyncData vs fetch
 
@@ -60,7 +62,7 @@ SSR 페이지 내 `<client-only>` 엘리먼트로 감싸진 영역은 CSR.
 * fetchOnServer : 기본값 true. 값이 false면 CSR에서만 훅 호출됨. true면 SSR에서만 훅 호출됨.
 
 ### created
-* SSR 대상 컴포넌트일 경우, 총 2번 호출(SSR, CSR)
+* SSR 대상 컴포넌트일 경우, 총 2번 호출(SSR 한번, CSR )
 * 둘 중 한번만 호출 가능
 ```
 created(){
