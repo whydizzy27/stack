@@ -3,8 +3,14 @@
 ## CSR vs SSR
 
 ### SSR 대상 화면 동작 원리
-* SSR 시점 인스턴스 생성 1회 (템플릿, 스크립트(여기에 HTML 템플릿, store 요소 값 들어있음) 리딩)
-* CSR 시점 인스턴스 생성 1회 (서버에서 받은 SSR 인스턴스 정보를 읽고 SSR 때 변동 있었던 store 요소 변환값 적용)
+참고 경로 : https://maxkim-j.github.io/posts/nuxt-ssr
+
+* SSR 시점 인스턴스 생성 1회
+  * 프리렌더링 : 브라우저의 주소창으로 들어온 요청에 맞는 페이지 컴포넌트를 프리렌더링해 브라우저에 제공하는 방식으로 라우팅
+    (HTML 파일(자바스크립트 코드 포함), store 속성 값 들어있음)
+  * 하이드레이션 : 프리렌더링 과정을 마치고 브라우저로 전달된 HTML 파일 위에 남은 자바스크립트 코드들을 실행하는 동작
+* CSR 시점 인스턴스 생성 1회 
+  * HTML 파일을 읽고 변동 있었던 store 속성 값 적용. (단, 컴포넌트 data 속성 값은 원본 유지됨)
 * created 훅은 SSR, CSR 각각 1회씩 호출됨. mounted는 CSR만.
 * computed(created 훅과 동일시점), watch(immediate:true)도 SSR, CSR 각각 최초 1회 호출됨.
 
