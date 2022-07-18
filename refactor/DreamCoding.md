@@ -66,6 +66,9 @@ function print(rawData){
 }
 ```
 
+##### 개인견해
+* 가독성이 우선.
+* 가독성에 따라 if else 쓸 지, 삼항연산자 쓸 지 판단하기
 
 ### YAGNI (You Ain't Gonna Need It)
 
