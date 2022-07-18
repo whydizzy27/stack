@@ -73,7 +73,7 @@ SSR 페이지 내 `<client-only>` 엘리먼트로 감싸진 영역은 CSR.
 * fetchOnServer : 기본값 true. 값이 false면 CSR에서만 훅 호출됨. true면 SSR에서만 훅 호출됨.
 * fetch 훅 재호출 가능
 ```
-
+this.$fetch()
 ```
 
 ### created
