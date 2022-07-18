@@ -2,7 +2,11 @@
 
 ## CSR vs SSR
 
-### SSR 대상 화면 동작 원리
+### 헷갈리지 말아야할 점
+* SSR 대상 페이지는 있으나 그 페이지를 무조건 SSR로만 접근하라는 법은 없음. 
+( /src/page 경로 밑에 페이지가 존재하면 SSR 가능. but, /src/page 경로 밑에 있다하여 무조건 SSR 로만 접근 가능한 것이 아니라는 의미. 라우팅으로 CSR 접근도 가능함. )
+
+### SSR 동작 원리
 참고 경로 : https://maxkim-j.github.io/posts/nuxt-ssr
 
 * SSR 시점 인스턴스 생성 1회
@@ -18,7 +22,7 @@
 * 보통 사용자 정보와 같은 개인정보는 CSR로 호출한다. (SSR로 호출 시 해당 화면을 캐싱하여 사용하기 어렵다. 개인정보는 개개인마다 다르기 때문에 공용으로 사용불가하므로.)
 
 ### SSR
-* SSR 대상 페이지 템플릿 중 서버에서 프리렌더링하지 않고 CSR로 렌더링할 부분을 구분할 수 있다. (client-only 태그 사용)
+* SSR HTML 템플릿 중 서버에서 프리렌더링하지 않고 CSR로 렌더링할 부분을 구분할 수 있다. (client-only 태그 사용)
 
 ## asyncData vs fetch
 
@@ -28,7 +32,7 @@ https://velog.io/@chaerin00/Nuxt-asyncData%EC%99%80-fetch%EC%9D%98-%EC%B0%A8%EC%
 
 ~~내용 보완 필요~~
 
-* asyncData, fetch 훅 둘다 SSR 대상 페이지든 CSR 대상 페이지든 1회만 호출된다.
+* asyncData, fetch 훅 둘다 SSR 이든 CSR 이든 1회만 호출된다.
 
 ### asyncData의 파라미터
 
@@ -81,8 +85,8 @@ this.$fetch()
 재호출이 가능하다고 fetch 훅에 반복대상로직을 넣는 것은 지양하는 편이 좋다. 추후 fetch 훅에 다른 로직이 추가될 경우 문제가 된다.
 
 ### created
-* SSR 대상 컴포넌트일 경우, 총 2번 호출(SSR 한번, CSR )
-* 둘 중 한번만 호출 가능
+* SSR 일 경우, 총 2번 호출(SSR 한번, CSR 한번)
+* 아래 예시처럼 둘 중 한번만 호출 가능
 ```
 created(){
   if(process.server){
