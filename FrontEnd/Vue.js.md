@@ -53,3 +53,24 @@ ex) 코딩 팁 : tab 컴포넌트 만들 때, tab 컨텐츠 중 일부만 keep-a
 ## store
 ### state
 * 브라우저 창 간 store state는 새로고침해야 동기화된다. (새로고침 안하면 브라우저 각각 구 값, 신규 값을 가지게 됨. 즉, 구 값이 업데이트되지 않은 상태임)
+
+## props
+* props 값은 변경 불가
+
+## watch
+* 객체형(배열, 객체)을 그냥 watch하면 참조값만 트래킹하므로 객체 내부 속성도 트래킹하려면 deep 속성이 필요함
+```
+watch: {
+    colours: {
+      // This will let Vue know to look inside the array
+      deep: true,
+
+      // We have to move our method to a handler field
+      handler()
+        console.log('The list of colours has changed!');
+      }
+    }
+  }
+
+출처 : https://ui.toast.com/weekly-pick/ko_20190307
+```
