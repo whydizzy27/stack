@@ -17,6 +17,9 @@
 ### CSR
 * 보통 사용자 정보와 같은 개인정보는 CSR로 호출한다. (SSR로 호출 시 해당 화면을 캐싱하여 사용하기 어렵다. 개인정보는 개개인마다 다르기 때문에 공용으로 사용불가하므로.)
 
+### SSR
+* SSR 대상 페이지 템플릿 중 서버에서 프리렌더링하지 않고 CSR로 렌더링할 부분을 구분할 수 있다. (client-only 태그 사용)
+
 ## asyncData vs fetch
 
 https://velog.io/@chaerin00/Nuxt-asyncData%EC%99%80-fetch%EC%9D%98-%EC%B0%A8%EC%9D%B4
@@ -25,7 +28,7 @@ https://velog.io/@chaerin00/Nuxt-asyncData%EC%99%80-fetch%EC%9D%98-%EC%B0%A8%EC%
 
 ~~내용 보완 필요~~
 
-* asyncData 훅은 SSR 대상 페이지든 CSR 대상 페이지든 1회만 호출된다.
+* asyncData, fetch 훅 둘다 SSR 대상 페이지든 CSR 대상 페이지든 1회만 호출된다.
 
 ### asyncData의 파라미터
 
