@@ -59,11 +59,16 @@ ex) 코딩 팁 : tab 컴포넌트 만들 때, tab 컨텐츠 중 일부만 keep-a
 * .sync 수식어
   * 양방향 바인딩(props/emit)
   ```
+  // 부모
   <text-document
   v-bind:title="doc.title"
   v-on:update:title="doc.title = $event"
   ></text-document>
   
+  // 자식
+  this.$emit('update:title', newTitle)
+  
+  // 부모
   // sync를 사용하여 간소화 가능
   <text-document v-bind:title.sync="doc.title"></text-document>
   ```
