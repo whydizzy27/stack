@@ -98,3 +98,24 @@ watch: {
 
 출처 : https://codingcoding.tistory.com/337
 
+
+
+## 인스턴스 메소드 컬럼을 특정 시점에 주입하는 법
+* watch 속성을 created 훅 시점에 주입 예시
+```
+ created() {
+    this.$watch(
+      'aaa',      // 트래킹할 컬럼명
+      (newVal, oldVal) => {       // 콜백 함수
+        // 콜백함수 로직
+      },
+      {           // watch 메소드 속성 추가
+        immediate: true,
+        deep: true
+        // 등등
+      }
+    )
+ }
+```
+* 장점 : 컬럼 주입 시점 컨트롤 가능
+* 단점 : watch 메소드 컬럼 트래킹이 어려워짐(어디서 주입되는지..)
