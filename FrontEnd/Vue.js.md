@@ -56,7 +56,18 @@ ex) 코딩 팁 : tab 컴포넌트 만들 때, tab 컨텐츠 중 일부만 keep-a
 
 ## props
 * props 값은 변경 불가
-* .sync 수식어 
+* .sync 수식어
+  * 양방향 바인딩(props/emit)
+  ```
+  <text-document
+  v-bind:title="doc.title"
+  v-on:update:title="doc.title = $event"
+  ></text-document>
+  
+  // sync를 사용하여 간소화 가능
+  <text-document v-bind:title.sync="doc.title"></text-document>
+  ```
+  * 참고 경로 : https://kr.vuejs.org/v2/guide/components-custom-events.html
 
 ## watch
 * 객체형(배열, 객체)을 그냥 watch하면 참조값만 트래킹하므로 객체 내부 속성도 트래킹하려면 deep 속성이 필요함
