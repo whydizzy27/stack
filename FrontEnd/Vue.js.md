@@ -106,7 +106,7 @@ watch: {
  created() {
     this.$watch(
       'aaa',      // 트래킹할 컬럼명
-      (newVal, oldVal) => {       // 콜백 함수
+      (newVal, oldVal) => {       // 콜백 함수(매개변수는 예시로 작성함)
         // 콜백함수 로직
       },
       {           // watch 메소드 속성 추가
