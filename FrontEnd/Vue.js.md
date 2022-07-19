@@ -91,3 +91,9 @@ watch: {
 
 출처 : https://ui.toast.com/weekly-pick/ko_20190307
 ```
+
+* 객체 내 속성을 개별적으로 watch
+![image](https://user-images.githubusercontent.com/67194249/179866644-00b04597-666e-4933-9370-857ab0aa05b6.png)
+
+출처 : https://codingcoding.tistory.com/337
+
