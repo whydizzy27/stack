@@ -90,7 +90,7 @@ some 사용 시 : 여러 값 중에 하나라도 들었을 경우를 확인하�
 
 ### setTimeout 대신 nextTick 활용하기
 * 렌더링 후 호출되는 함수나 렌더링 시점인 mounted 훅에서 주로 사용(DOM update)
-* setTimeout은 환경에 따라 시점이 달라져 불안정함.
+* setTimeout은 환경에 따라 시점이 달라져 불안정함(사용지양)
 
 
 ## 프로젝트 구성
