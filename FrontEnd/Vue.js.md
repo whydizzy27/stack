@@ -119,3 +119,36 @@ watch: {
 ```
 * 장점 : 컬럼 주입 시점 컨트롤 가능
 * 단점 : watch 메소드 컬럼 트래킹이 어려워짐(어디서 주입되는지..)
+
+
+## provide & inject
+
+참고 경로 : https://v3.ko.vuejs.org/guide/component-provide-inject.html
+
+* 부모가 먼 자식에게 props 하기 위해서는 그 사이 자식 컴포넌트에게 모두 props 해야한다. 이를 편하게 하기 위해 provide, inject를 사용한다.
+* 부모에서는 provide로 컴포넌트 계층 구조의 깊이와 상관없이 모든 자식에 대한 종속성 제공자 역할을 할 수 있다.
+
+```
+// 정적 값 전달하는 것은 간단하게 아래와 같이 쓰면 된다.
+provide: {
+  user: 'John Doe'
+}
+
+// 컴포넌트 인스턴스 속성에 접근하려면 provide를 객체로 반환하는 함수로 변환해야 한다.
+data() {
+  return {
+    todos: ['Feed a cat', 'Buy tickets']
+  }
+},
+provide() {
+  return {
+    todoLength: this.todos.length // this.todos로 data 속성에 접근
+  }
+}
+
+// 자식 단 inject
+inject: ['todoLength']
+```
+
+
+
