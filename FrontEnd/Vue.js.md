@@ -121,9 +121,9 @@ watch: {
 * 단점 : watch 메소드 컬럼 트래킹이 어려워짐(어디서 주입되는지..)
 
 
-## provide & inject
+## provide & inject (Vue2 기준)
 
-참고 경로 : https://v3.ko.vuejs.org/guide/component-provide-inject.html
+참고 경로 : https://vuejs.org/guide/components/provide-inject.html
 
 * 부모가 먼 자식에게 props 하기 위해서는 그 사이 자식 컴포넌트에게 모두 props 해야한다. 이를 편하게 하기 위해 provide, inject를 사용한다.
 * 부모에서는 provide로 컴포넌트 계층 구조의 깊이와 상관없이 모든 자식에 대한 종속성 제공자 역할을 할 수 있다.
@@ -131,37 +131,57 @@ watch: {
 ```
 // 정적 값 전달하는 것은 간단하게 아래와 같이 쓰면 된다.
 provide: {
-  user: 'John Doe'
+  message: 'hello!'
 }
 
 // 컴포넌트 인스턴스 속성에 접근하려면 provide를 객체로 반환하는 함수로 변환해야 한다.
 data() {
   return {
-    todos: ['Feed a cat', 'Buy tickets']
+    message: 'hello!'
   }
 },
 provide() {
   return {
-    todoLength: this.todos.length // this.todos로 data 속성에 접근
+    message: this.message // this.message로 data 속성에 접근
   }
 }
-
+```
+```
 // 자식 단 inject
 inject: ['todoLength']
+
+// injection Aliasing
+inject: {
+  /* local key */ localMessage: {
+    from: /* injection key */ 'message'
+  }
+}
 ```
 * provide/inject 바인딩이 기본적으로 반응형이 아니기 때문에 ref 속성이나 reactive 객체를 provide에 전달하여 반응형으로 변경할 수 있다.
 ```
-// 위 소스에서 todos가 변경될 경우 todoLength가 todos의 변경을 따라가지 못한다. (반응형X)
+// 위 소스에서는 data 의 message가 변경되어도 provide 되는 message 값이 변경사항을 따라가지 못한다. (반응형X)
 // 아래 소스로 반응형 보장 가능.
-provide() {
-  return {
-    todoLength: Vue.computed(() => this.todos.length)
+import { computed } from 'vue'
+
+export default {
+  data() {
+    return {
+      message: 'hello!'
+    }
+  },
+  provide() {
+    return {
+      // explicitly provide a computed property
+      message: computed(() => this.message)
+    }
   }
 }
 ```
 * 가능한 provider(부모) 내부에서만 반응성 속성에 대한 변이가 발생하도록 유지하는 것이 좋다. 불가피하게 inject단(자식)에서 데이터를 업데이트해야하는 경우, 반응성 속성을 변형시키는 메소드를 provide 하는 것을 추천.
+* props와 달리, provide 된 속성은 자식단에서 변경될 수 있음(반응형이 아니기 때문. 반응성 있는 값이어도 변경 가능 but, provider 단에서 변경될 때마다 계속 갱신될 것으로 보임.)
+* provide 속성이 자식단에서 변경되지 않도록 하려면 readonly 사용.
 ```
-추후 설명 보완.
+
 ```
 * 로그인과 같은 공통영역을 제외하면 store 대신 provide/inject를 사용하는 것이 유지보수에 좋다. 
 
