@@ -149,7 +149,16 @@ provide() {
 // 자식 단 inject
 inject: ['todoLength']
 ```
-
+* provide/inject 바인딩이 기본적으로 반응형이 아니기 때문에 ref 속성이나 reactive 객체를 provide에 전달하여 반응형으로 변경할 수 있다.
+```
+// 위 소스에서 todos가 변경될 경우 todoLength가 todos의 변경을 따라가지 못한다. (반응형X)
+// 아래 소스로 반응형 보장 가능.
+provide() {
+  return {
+    todoLength: Vue.computed(() => this.todos.length)
+  }
+}
+```
 * 로그인과 같은 공통영역을 제외하면 store 대신 provide/inject를 사용하는 것이 유지보수에 좋다. 
 
 
