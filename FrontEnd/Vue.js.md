@@ -121,7 +121,7 @@ watch: {
 * 단점 : watch 메소드 컬럼 트래킹이 어려워짐(어디서 주입되는지..)
 
 
-## provide & inject (Vue2 기준)
+## provide & inject
 
 참고 경로 : https://vuejs.org/guide/components/provide-inject.html
 
@@ -179,7 +179,7 @@ export default {
 ```
 * 가능한 provider(부모) 내부에서만 반응성 속성에 대한 변이가 발생하도록 유지하는 것이 좋다. 불가피하게 inject단(자식)에서 데이터를 업데이트해야하는 경우, 반응성 속성을 변형시키는 메소드를 provide 하는 것을 추천.
 * props와 달리, provide 된 속성은 자식단에서 변경될 수 있음(반응형이 아니기 때문. 반응성 있는 값이어도 변경 가능 but, provider 단에서 변경될 때마다 계속 갱신될 것으로 보임.)
-* provide 속성이 자식단에서 변경되지 않도록 하려면 readonly 사용.
+* provide 속성이 자식단에서 변경되지 않도록 하려면 readonly 사용.(Vue3 기준)
 ```
 
 ```
