@@ -150,5 +150,6 @@ provide() {
 inject: ['todoLength']
 ```
 
+* 로그인과 같은 공통영역을 제외하면 store 대신 provide/inject를 사용하는 것이 유지보수에 좋다. 
 
 
