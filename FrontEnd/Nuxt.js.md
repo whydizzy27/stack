@@ -5,6 +5,7 @@
 ### 헷갈리지 말아야할 점
 * SSR 대상 페이지는 있으나 그 페이지를 무조건 SSR로만 접근하라는 법은 없음. 
 ( /src/page 경로 밑에 페이지가 존재하면 SSR 가능. but, /src/page 경로 밑에 있다하여 무조건 SSR 로만 접근 가능한 것이 아니라는 의미. 라우팅으로 CSR 접근도 가능함. )
+* v-if false 인 템플릿은 SSR html에 포함되지 않는다.
 
 ### SSR 동작 원리
 참고 경로 : https://maxkim-j.github.io/posts/nuxt-ssr
